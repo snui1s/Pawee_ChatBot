@@ -193,17 +193,16 @@ if __name__ == "__main__":
         ],
     )
 
-    # 2. Setup FastAPI to handle HEAD requests (Keep-alive for Render)
-    app = FastAPI()
+    # 2. Get the internal FastAPI app from Gradio
+    app = demo.app
 
+    # 3. Add Health Check & HEAD support to the ALREADY WORKING Gradio app
     @app.head("/")
     @app.get("/health")
     def health_check():
         return {"status": "ok"}
 
-    # 3. Mount Gradio onto FastAPI
-    app = gr.mount_gradio_app(app, demo, path="/")
-
-    # 4. Run the server
+    # 4. Launch using uvicorn to respect Render's PORT
     port = int(os.environ.get("PORT", 7860))
+    print(f"--- SYSTEM: Launching Server on port {port} ---")
     uvicorn.run(app, host="0.0.0.0", port=port)

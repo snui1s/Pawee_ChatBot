@@ -99,7 +99,7 @@ FEATURED PROJECTS
      * Robust Error Handling
      * Session Management & Data Export
 
-6. Pawee ChatBot (Interactive AI)
+6. Pawee ChatBot (Interactive AI) or this Project
    - Personalized digital representative answering profile questions.
    - Answers profile questions using LinkedIn context.
    - Tech: Python, LLM.
