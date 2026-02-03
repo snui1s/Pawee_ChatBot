@@ -1,27 +1,29 @@
-# Pawee_Chatbot
+# 🤖 Pawee ChatBot (Personal AI Representative)
 
-This is the personal AI Assistant for me, acting as a digital representative to answer questions about my work experience, skills, and interests.
+An interactive AI assistant designed to represent **Pawee Indulakshana**, a Junior AI Engineer. This bot answers questions about his career, skills, and experience while capturing leads and unknown questions in real-time.
 
-- RAG-like Context: The system draws information directly from Pawee's LinkedIn Profile (PDF) and Summary (Text) to serve as context, ensuring responses are highly accurate and current.
+---
 
-- Core Model: Powered by Google Gemini 2.5 Flash.
+## ✨ Features
 
-## Key Features
+- **Brain**: Powered by **OpenAI GPT-4o-mini**.
+- **Context-Aware**: Uses `summary.txt` as the source of truth for all professional experience.
+- **Agentic Tools**:
+  - **Leads Capture**: Automatically records name and email into Supabase.
+  - **Knowledge Gap Logging**: Records questions that aren't in the summary for future updates.
+- **Production Ready**:
+  - **Postgres Pooling**: High-performance database connection handling via `psycopg2`.
+  - **FastAPI Integration**: Includes `HEAD` and `/health` endpoints for uptime monitoring (Render-friendly).
+- **Multilingual**: Fluent in both **Thai** and **English**.
+- **Sliding Window Memory**: Remembers context within the conversation without slowing down.
 
-- Email Recording: If an interested party wants to connect, the AI proactively asks for and records their email (record_user_details).
+## 🛠 Tech Stack
 
-- Question Logging: If the AI cannot answer a question outside its professional context, it logs the query for later review
+- **Framework**: Gradio + FastAPI
+- **LLM Orchestration**: LangChain
+- **Database**: Supabase (PostgreSQL)
+- **Package Manager**: uv
 
-## You can try asking AI
+---
 
-"What is your experience in AI/ML"
-
-"I'm interested in working together, how should I contact you?" (To test the email recording feature)
-
-## Get in Touch!
-
-Got any questions or cool suggestions? Feel free to reach out!
-
-- **Name:** Pawee Indulakshana
-
-- **Email:** p.indulakshana@gmail.com
+_Created by Pawee Indulakshana - Aspiring AI Engineer & Product Manager_
