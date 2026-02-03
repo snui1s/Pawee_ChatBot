@@ -181,28 +181,34 @@ if __name__ == "__main__":
         secondary_hue="slate",
     )
 
-    # 1. Create the Gradio interface
-    demo = gr.ChatInterface(
-        fn=bot.chat,
-        title=f"Chat with {bot.name}",
-        description=f"You can leave contact details (email, name) to get in touch. I will get back to you as soon as possible.",
-        examples=[
-            "Tell me about your AI experience",
-            "เล่าประวัติของคุณให้ฟังหน่อย",
-            "How can I contact you?",
-        ],
-    )
+    # 1. Build the UI with gr.Blocks (More stable for Assets)
+    with gr.Blocks(title=f"{bot.name} Assistant", theme=theme) as demo:
+        gr.ChatInterface(
+            fn=bot.chat,
+            title=f"Chat with {bot.name}",
+            description=f"You can leave contact details (email, name) to get in touch. I will get back to you as soon as possible.",
+            examples=[
+                "Tell me about your AI experience",
+                "เล่าประวัติของคุณให้ฟังหน่อย",
+                "How can I contact you?",
+            ],
+        )
 
-    # 2. Get the internal FastAPI app from Gradio
-    app = demo.app
+    # 2. Setup FastAPI
+    main_app = FastAPI()
 
-    # 3. Add Health Check & HEAD support to the ALREADY WORKING Gradio app
-    @app.head("/")
-    @app.get("/health")
+    # 3. Add Health Check Endpoint at /health (Use this for Render pings!)
+    @main_app.get("/health")
+    @main_app.head("/health")
     def health_check():
-        return {"status": "ok"}
+        return {"status": "alive", "bot": bot.name}
 
-    # 4. Launch using uvicorn to respect Render's PORT
+    # 4. Mount Gradio to FastAPI at Root
+    # This prevents the 404/500 errors by letting Gradio handle its own assets properly
+    app = gr.mount_gradio_app(main_app, demo, path="/")
+
+    # 5. Launch with uvicorn
     port = int(os.environ.get("PORT", 7860))
-    print(f"--- SYSTEM: Launching Server on port {port} ---")
+    print(f"--- SYSTEM: Server starting on port {port} ---")
+    print(f"--- SYSTEM: Health check available at /health ---")
     uvicorn.run(app, host="0.0.0.0", port=port)
