@@ -1,3 +1,134 @@
-My name is Pawee Indulakshana. I'm a student at King Mongkut's University of Technology North Bangkok, Junior AI Engineer and Junior Data Scientist. I'm originally from Bangkok, Thailand.
-I love all foods, particularly Thai food, My favorite dish is American Fried Rice because it has every flavors in it, I'm loving it. - and secondary is pizza. and I love to playing game and watching shows and flims.
-My favorite show is Better Call Saul.
+============================================================
+           PAWEE INDULAKSHANA (ปวีร์ อินทุลักษณ์)- COMPREHENSIVE PROFILE
+============================================================
+
+ROLE: Below Junior AI Engineer | Problem Solver | Aspiring Product Manager
+LOCATION: Saochingcha, Bangkok, Thailand
+GPA: 3.80 (First-Class Honors track)
+CONTACT: p.indulakshana@gmail.com | 065-454-9633
+GITHUB: github.com/snui1s
+
+------------------------------------------------------------
+I bridge the gap between Data Science and Full-Stack Development, 
+turning raw models into interactive web applications. I am a big 
+believer in AI-augmented development (Vibe Coding).
+------------------------------------------------------------
+
+EDUCATION
+- B.Sc. in Information Technology (2022 - 2026)
+  King Mongkut's University of Technology North Bangkok
+  GPA: 3.80
+- Vocational Certificate in Electronics (2019 - 2022)
+  Samutsakorn Technical College
+  GPA: 3.50
+
+PROFESSIONAL EXPERIENCE
+1. HR AI Trainee (Internship) | Nov 2025 - Feb 2026
+   Charoen Pokphand Foods Public Company Limited (CPF)
+   - Solved complex HR challenges using Programming and AI integration.
+   - Developed data pipelines and data preparation for RAG systems.
+   - Implemented automated candidate scraping from JobsDB.
+   - Optimized application performance, reducing startup time from 60s to 3s (95% improvement).
+
+2. Seasonal Event Staff | 2023 - 2025
+   Thai Beverage Public Company Limited
+   - Managed festival activities and handled high tourist volumes.
+   - Gained experience in teamwork and problem-solving.
+
+3. Part-Time CAD | 2021
+   Triple T Broad Band Public Company Limited
+   - AutoCAD 2D drawing for fiber optic cable installation plans.
+
+FEATURED PROJECTS
+1. Skrut AI (AI Agent)
+   - Intelligent Resume Evaluation Agent.
+   - High-performance, privacy-first tool for evaluating resumes beyond keyword matching.
+   - Tech: FastAPI, Next.js, LangChain, Tailwind.
+   - SKILLS:
+     * Multi-Agent Orchestration (LangGraph)
+     * Hybrid OCR & Document Processing
+     * Anti-Hallucination Guardrails
+     * Semantic Skill Family Mapping
+     * Stateless Privacy-First Architecture
+     * Recruitment Workflow Automation
+
+2. Kemii (Intern Project - AI & Psychology)
+   - Team optimization system leveraging psychometric data.
+   - Ensures balanced teams with high skill coverage and harmony.
+   - Tech: FastAPI, Next.js, AI, Tailwind.
+   - SKILLS:
+     * Proprietary Optimization & Matching Algorithms
+     * Statistical Analysis & Modeling
+     * Generative AI Strategic Guidance
+     * Full-Stack System Design
+     * API & System Security (JWT/RBAC)
+     * Database Design & Management
+
+3. 楽 Raku (Note-Taking App)
+   - Blazing-fast, native performance, distraction-free note-taking app.
+   - Tech: React, Tauri, Rust, Tailwind.
+   - SKILLS:
+     * Native Application Development
+     * Cross-Platform Desktop App
+     * High-Performance Computing
+     * UI/UX Development
+     * Local Data Persistence
+
+4. CareerPath AI (Intern Project - Data & AI)
+   - AI-powered career advisory engine with RAG architecture.
+   - Analyzes career goals and identifies skill gaps.
+   - Tech: Python, LangChain, ChromaDB.
+   - SKILLS:
+     * RAG Architecture
+     * LLM Application Development
+     * ETL Pipeline
+     * Vector Search & Retrieval
+     * Semantic Search
+     * Personalized Recommendation Systems
+     * Conversational AI Context Management
+
+5. Candidate Scraper (Intern Project - Automation)
+   - Automated tool for candidate extraction and resume collection.
+   - Features auto-restart, deduplication, and Excel export.
+   - Tech: Python, Playwright, Pandas.
+   - SKILLS:
+     * Web Scraping Automation
+     * Headless Browser Automation
+     * Data Extraction & Deduplication
+     * Batch Processing
+     * Robust Error Handling
+     * Session Management & Data Export
+
+6. Pawee ChatBot (Interactive AI)
+   - Personalized digital representative answering profile questions.
+   - Answers profile questions using LinkedIn context.
+   - Tech: Python, LLM.
+   - SKILLS:
+     * Personal AI Assistant Development
+     * RAG-like Contextual Retrieval
+     * LLM Integration
+     * Information Extraction
+     * Lead Generation Automation
+     * Feature Logging
+
+STUDENT PROJECTS
+7. Movie Review Web App (2024)
+   - Full-Stack CRUD with Node.js, Express, and SQLite.
+8. Real-Time Detection of Chickens and Eggs (2025)
+   - YOLOv11 model (93% accuracy) with 6000+ custom annotated images.
+9. Defective Tire Classification (2024)
+   - Fine-tuned MobileNetV2 achieving 90% accuracy for quality control.
+
+TECHNICAL SKILLS & TOOLS
+- LANGUAGES: Python, JavaScript, Rust, C++, Java, PHP, TypeScript
+- DATA & AI: Pandas, NumPy, Scikit-learn, TensorFlow, Keras, PyTorch, 
+             LangGraph/LangChain, HuggingFace, ChromaDB, Qdrant, YOLOv11
+- WEB & BACKEND: Next.js, React, Node.js, Express, FastAPI, Tauri, Tailwind CSS
+- TOOLS & DB: PostgreSQL, SQLite, Git, Docker, Playwright, Jupyter, Vercel, Render
+- OTHER: AutoCAD, Statistical Analysis, System Design (JWT/RBAC), ETL Pipelines
+
+SUMMARY PHILOSOPHY
+I use AI as a speed booster to handle the coding, allowing me to focus on 
+being a Problem Solver and a Product-focused engineer. I believe in Open 
+Source and building for the community.
+============================================================
