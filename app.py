@@ -169,9 +169,6 @@ class PaweeBot:
         return response.content
 
 
-from fastapi import FastAPI
-import uvicorn
-
 # --- INTERFACE ---
 if __name__ == "__main__":
     bot = PaweeBot()
@@ -181,34 +178,35 @@ if __name__ == "__main__":
         secondary_hue="slate",
     )
 
-    # 1. Build the UI with gr.Blocks (More stable for Assets)
-    with gr.Blocks(title=f"{bot.name} Assistant", theme=theme) as demo:
-        gr.ChatInterface(
-            fn=bot.chat,
-            title=f"Chat with {bot.name}",
-            description=f"You can leave contact details (email, name) to get in touch. I will get back to you as soon as possible.",
-            examples=[
-                "Tell me about your AI experience",
-                "เล่าประวัติของคุณให้ฟังหน่อย",
-                "How can I contact you?",
-            ],
-        )
+    # 1. Create the Gradio interface
+    demo = gr.ChatInterface(
+        fn=bot.chat,
+        title=f"Chat with {bot.name}",
+        description=f"You can leave contact details (email, name) to get in touch. I will get back to you as soon as possible.",
+        examples=[
+            "Tell me about your AI experience",
+            "เล่าประวัติของคุณให้ฟังหน่อย",
+            "How can I contact you?",
+        ],
+        theme=theme,
+    )
 
-    # 2. Setup FastAPI
-    main_app = FastAPI()
+    # 2. Get the internal app and add health check
+    # This must be done to support Render's keep-alive/health checks
+    app = demo.app
 
-    # 3. Add Health Check Endpoint at /health (Use this for Render pings!)
-    @main_app.get("/health")
-    @main_app.head("/health")
+    @app.get("/health")
+    @app.head("/health")
+    @app.head("/")
     def health_check():
-        return {"status": "alive", "bot": bot.name}
+        return {"status": "online", "owner": bot.name}
 
-    # 4. Mount Gradio to FastAPI at Root
-    # This prevents the 404/500 errors by letting Gradio handle its own assets properly
-    app = gr.mount_gradio_app(main_app, demo, path="/")
-
-    # 5. Launch with uvicorn
+    # 3. Launch the app
+    # Port is provided by Render's environment variable
     port = int(os.environ.get("PORT", 7860))
-    print(f"--- SYSTEM: Server starting on port {port} ---")
-    print(f"--- SYSTEM: Health check available at /health ---")
+    print(f"--- SYSTEM: Starting Production Server on port {port} ---")
+
+    # We use uvicorn to run the app object we just modified
+    import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=port)
